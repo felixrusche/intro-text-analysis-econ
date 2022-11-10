@@ -1,0 +1,60 @@
+---
+title: "Notes: Intro to Natural Language Processing"
+author: "Felix Rusche"
+date: '2022-11-09'
+output:
+  bookdown::pdf_document2:
+      number_sections: true
+  html_document: default
+  # https://bookdown.org/yihui/bookdown/figures.html
+---
+
+# Lecture 1: Introduction
+## Terminology
+- Corpus: collection of document
+- document: collection of tokens
+- token: word/phrase
+- metadata: e.g. date or length of a document or growth rate on day when the document was released
+
+## Data:
+- Factiva and Lexis Nexis: best sources for newspaper articles
+  - Lexis Nexis: costs money to download around 500 articles at a time, but can be scraped easily (10th of thousands are doable)
+  - it it's something an RA would've been able to do, then it doesnt seem to be a legal problem
+- Twitter: Academic Twitter is easy to get access to and gives you access to full API
+
+# Lecture 2
+## Embeddings
+Embeddings use co-occurence patterns of 
+- acemoglu et al (2022) has a paper using word embeddings: https://www.sciencedirect.com/science/article/pii/S2212828X22000482
+## Topic Models
+Idea: we know the words and we are looking for the posterior distributions of topics over words and of documents over topics.
+- LDA Model: I choose the number of topics 
+- choose k topics
+- each topic is represented by a vector beta that is a distribution over words
+- each document is drawn from a distribution over topics
+- each word is drawn from a multinomial distribution over documents
+
+# Relevant for own projects
+- Google Translate will give you a quota as a researcher
+  - in their own project, they just translate texts to english in order to use english dictionaries
+  - there is literature in the slides showing that sentiment is preserved in this way
+- The way open AI works is that it tries to predict what the next sentence is, i.e. the answer to a question.
+- look at his collection of media in different countries
+- dictionaries: 
+  - still the go-to method (at least as a baseline)
+  - a dictionary for my purpose must be available (one may need to create one's own one)
+  - "if there's a dictionary: use it!"
+  - check out "vader". It's a dictionary method, but does take the context into account, e.g. "very nice" gets a higher score than "nice"
+- pros and cons of language models:
+  - cons: they are trained on huge data sets, but this may not be relevant to the specific research's context
+
+
+
+
+
+
+
+
+
+
+

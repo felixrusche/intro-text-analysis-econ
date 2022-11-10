@@ -2,7 +2,7 @@
 # This file imports and cleans FOMC minutes from txt files
 ####
 
-setwd("~/Documents/GitHub/intro-text-analysis-econ")
+setwd("/Users/frusche/Nextcloud/Eigene Dateien/PhD 7-8/intro_text_analysis")
 rm(list = ls())
 
 require(readtext)
@@ -28,7 +28,7 @@ for (ii in 1:length(extra_files)){
   
   paras <- str_split(meeting_txt$text, "\n\n")[[1]]
   paras <- str_squish(paras)
-  paras <- paras[which(nchar(paras) > 1)]
+  paras <- paras[which(nchar(paras) > 1)] # remove short paragraphs
   # Create empty dataframe to fill
   temp.df <- data.frame(matrix(NA,length(paras),ncol(fedminutes_df)))
   names(temp.df) <- names(fedminutes_df)

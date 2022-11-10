@@ -2,7 +2,7 @@
 # This file illustrates double ML on FOMC minutes
 ####
 
-setwd("~/Documents/GitHub/intro-text-analysis-econ")
+setwd("/Users/frusche/Nextcloud/Eigene Dateien/PhD 7-8/intro_text_analysis")
 rm(list = ls())
 
 library(DoubleML)

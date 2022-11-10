@@ -2,7 +2,7 @@
 # This file illustrates dictionary methods and sentiment analysis on FOMC minutes
 ####
 
-setwd("~/Documents/GitHub/intro-text-analysis-econ")
+setwd("/Users/frusche/Nextcloud/Eigene Dateien/PhD 7-8/intro_text_analysis")
 rm(list = ls())
 
 require(stringr)
@@ -10,6 +10,7 @@ require(tidyverse)
 require(tidytext)
 require(ggplot2)
 require(ggwordcloud)
+require(lubridate)
 
 
 std <- function(x){
@@ -33,7 +34,7 @@ gdp_df <- read.csv("data/GDPC1.csv", stringsAsFactors = FALSE) %>%
          quarter = as.Date(quarter))
 
 
-# Separate out words
+# Separate out words (creates list of tokens)
 fedminutes_words <- fedminutes_df %>%
   mutate(paragraph = str_remove_all(paragraph, "[0-9]+")) %>%
   select(date, paragraph) %>%
